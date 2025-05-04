@@ -55,3 +55,57 @@ This project is a backend implementation of a simplified Airbnb-like platform. I
 | **GitHub Actions** | Used to define and manage CI/CD workflows for building, testing, and deploying the backend automatically. |
 
 ---
+
+## 🗃️ Database Design
+
+The database uses a normalized relational structure with key entities and well-defined relationships:
+
+### 🔸 Users
+- `id`: Unique user identifier
+- `email`: User's email address (unique)
+- `password`: Encrypted password
+- `full_name`: Full name of the user
+- `is_host`: Boolean flag indicating if the user can list properties
+- 🔗 *Relationships*: A user can own multiple properties and make multiple bookings.
+
+---
+
+### 🔸 Properties
+- `id`: Unique identifier for the property
+- `title`: Title or name of the property
+- `location`: Address or geolocation data
+- `price_per_night`: Rental price per night
+- `owner_id`: Foreign key to the user (host)
+- 🔗 *Relationships*: A property is owned by one user and can receive multiple bookings and reviews.
+
+---
+
+### 🔸 Bookings
+- `id`: Booking identifier
+- `user_id`: Foreign key to the booking user (guest)
+- `property_id`: Foreign key to the booked property
+- `check_in`: Date of arrival
+- `check_out`: Date of departure
+- 🔗 *Relationships*: A booking is made by one user for one property.
+
+---
+
+### 🔸 Reviews
+- `id`: Review identifier
+- `user_id`: Foreign key to the review author
+- `property_id`: Foreign key to the reviewed property
+- `rating`: Integer score (e.g., 1-5)
+- `comment`: Text content of the review
+- 🔗 *Relationships*: A user can leave multiple reviews; each review is linked to a single property.
+
+---
+
+### 🔸 Payments
+- `id`: Payment identifier
+- `booking_id`: Foreign key linking to the booking
+- `amount`: Total transaction amount
+- `status`: Status of payment (e.g., pending, successful, failed)
+- `timestamp`: Time of payment
+- 🔗 *Relationships*: Each payment is tied to one booking only.
+
+---
