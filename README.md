@@ -133,3 +133,75 @@ Users can leave feedback for properties after their stay, including ratings and 
 Implements indexing on frequently queried fields and uses Redis for caching search results and session data to reduce server load.
 
 ---
+
+
+## 🔐 API Security Overview
+
+### 🛡️ JWT (JSON Web Tokens)
+**Purpose:**  
+Used for stateless user authentication across the API. After logging in, users receive a token that must be included in the `Authorization` header of subsequent requests.
+
+**Benefits:**
+- Stateless: No need to store session info on the server.
+- Compact and fast to validate.
+- Helps prevent unauthorized access to protected endpoints.
+
+---
+
+### 🔒 HTTPS Enforcement
+**Purpose:**  
+All API communication is conducted over HTTPS to ensure data is encrypted during transit.
+
+**Benefits:**
+- Protects against man-in-the-middle attacks.
+- Safeguards sensitive information like passwords and payment data.
+
+---
+
+### 🧾 Input Validation & Sanitization
+**Purpose:**  
+Validate all incoming data at both the serializer (Django REST Framework) and database level.
+
+**Benefits:**
+- Prevents SQL Injection, XSS, and other injection attacks.
+- Ensures data consistency and integrity.
+
+---
+
+### 📋 Role-Based Access Control (RBAC)
+**Purpose:**  
+Restrict actions based on user roles (e.g., admin, host, guest).
+
+**Benefits:**
+- Prevents unauthorized data access or modification.
+- Ensures only permitted users can perform specific actions.
+
+---
+
+### 🧮 Rate Limiting & Throttling
+**Purpose:**  
+Implemented using Django REST Framework’s throttling features.
+
+**Benefits:**
+- Protects against brute-force attacks and abuse of public APIs.
+- Ensures fair usage of resources.
+
+---
+
+### 🔁 Refresh Tokens
+**Purpose:**  
+Short-lived access tokens are paired with refresh tokens to reduce risks from stolen tokens.
+
+**Benefits:**
+- Enhances session security.
+- Reduces the damage window if a token is compromised.
+
+---
+
+### 📊 Monitoring & Logging
+**Purpose:**  
+Monitor API requests and log abnormal or unauthorized activities.
+
+**Tools:**
+- Sentry for error tracking.
+- ELK stack or built-in Django logging.
