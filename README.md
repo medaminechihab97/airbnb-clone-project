@@ -205,3 +205,31 @@ Monitor API requests and log abnormal or unauthorized activities.
 **Tools:**
 - Sentry for error tracking.
 - ELK stack or built-in Django logging.
+
+---
+
+
+## 🔁 CI/CD Pipeline
+
+CI/CD (Continuous Integration and Continuous Deployment) ensures a seamless and automated workflow for building, testing, and deploying the backend.
+
+### 🔍 Continuous Integration
+- Automated tests are triggered on every push or pull request.
+- Ensures new code does not break existing features.
+
+### 🚀 Continuous Deployment
+- Automatically builds Docker containers and deploys them to staging or production environments.
+- Prevents manual deployment errors and accelerates release cycles.
+
+### 🔧 Tools Used
+- **GitHub Actions**: For writing CI/CD workflows triggered by git events (push, PRs).
+- **Docker**: Containers standardize the environment and simplify deployment.
+- *(Optional)*: Integration with cloud platforms like Heroku, AWS, or DigitalOcean for hosting and orchestration.
+
+---
+
+## 📬 Contact
+
+For contributions or feedback, reach out via [LinkedIn](https://www.linkedin.com/in/mohammedamine-chihab/) or open an issue in the repository.
+
+---
