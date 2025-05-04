@@ -109,3 +109,27 @@ The database uses a normalized relational structure with key entities and well-d
 - 🔗 *Relationships*: Each payment is tied to one booking only.
 
 ---
+
+
+
+## 🧩 Feature Breakdown
+
+### 👤 User Management
+Provides functionality for user registration, login/logout, profile updates, and authentication using JWT. Hosts and guests are identified based on a user role flag.
+
+### 🏠 Property Management
+Hosts can create, read, update, and delete property listings. Each property contains information like price, availability, and location.
+
+### 📅 Booking System
+Allows users to view available properties and make reservations for specific dates. It also supports modification and cancellation of bookings.
+
+### 💳 Payment Processing
+Handles secure payment transactions tied to bookings. Integrates with third-party gateways and logs transaction history and statuses.
+
+### 🌟 Review System
+Users can leave feedback for properties after their stay, including ratings and written comments. Helps maintain transparency and quality.
+
+### 🚀 Data Optimization
+Implements indexing on frequently queried fields and uses Redis for caching search results and session data to reduce server load.
+
+---
