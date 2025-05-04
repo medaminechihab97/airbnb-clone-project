@@ -40,5 +40,18 @@ This project is a backend implementation of a simplified Airbnb-like platform. I
 
 ---
 
-## database design
 
+## ⚙️ Technology Stack
+
+| Technology       | Purpose in Project |
+|------------------|--------------------|
+| **Django**       | High-level Python web framework used to implement backend logic and manage application structure. |
+| **Django REST Framework (DRF)** | Adds flexible and customizable tools for building RESTful APIs to support CRUD operations. |
+| **GraphQL (Graphene-Django)** | Provides a flexible query interface to retrieve nested data efficiently from the backend. |
+| **PostgreSQL**   | Main relational database for structured data such as users, properties, bookings, and payments. |
+| **Redis**        | In-memory data store used for caching, session management, and speeding up frequent queries. |
+| **Celery**       | Asynchronous task queue used for running background jobs like sending confirmation emails or processing payments. |
+| **Docker**       | Ensures consistent development and deployment environments through containerization. |
+| **GitHub Actions** | Used to define and manage CI/CD workflows for building, testing, and deploying the backend automatically. |
+
+---
